@@ -4,7 +4,7 @@ When working on cross-Atlantic teams, it is common for developers who've learned
 
 ## Rule Details
 
-This rule picks out variable names which use British English spellings instead of American English spellings.
+This rule picks out when identifiers are set which use British English spellings instead of American English spellings.
 
 Examples of **incorrect** code for this rule:
 
@@ -12,6 +12,7 @@ Examples of **incorrect** code for this rule:
 const GREY = '#888888';
 function getColour() { return GREY; };
 var favouriteColour = 'grey';
+obj.colour = true;
 ```
 
 Examples of **correct** code for this rule:
@@ -20,6 +21,8 @@ Examples of **correct** code for this rule:
 const GRAY = '#888888';
 function getColor() { return GRAY; };
 var favoriteColor = 'grey';  // Strings are not parsed by this rule
+console.log(obj.colour);  // The property is not set here
+console.log(colour);  // The variable is not set here
 ```
 
 ### Options
