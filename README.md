@@ -4,7 +4,9 @@ An ESLint plugin containing a single rule to catch variable names written in Bri
 
 ## Rules
 
-- [no-communist-spelling/no-communist-spelling](./docs/rules/no-communist-spelling.md)
+Documentation for the rule is located here:
+
+- [no-communist-spelling/no-communist-spelling](https://github.com/dprgarner/eslint-plugin-no-communist-spelling/tree/master/docs/rules/no-communist-spelling.md)
 
 ## Installation
 
@@ -65,12 +67,3 @@ git push && git push --tags
 JSON data for spelling differences adapted from [American-British-English-Translator][translator].
 
 [translator]: https://github.com/hyperreality/American-British-English-Translator
-
-Other links:
-
-## Link Dump
-
-- https://eslint.org/docs/developer-guide/working-with-rules
-- https://eslint.org/docs/rules/#variables
-- https://medium.com/@btegelund/creating-an-eslint-plugin-87f1cb42767f
-- <https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences>
