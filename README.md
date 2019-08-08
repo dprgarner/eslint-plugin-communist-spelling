@@ -45,6 +45,21 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+## Releasing
+
+Releases to NPM are performed via Travis when tagged commits are pushed to the
+repo. Create a new tagged commit and bump the version in package.json with:
+
+```bash
+npm version patch
+```
+
+and push the new commits and tags with:
+
+```bash
+git push && git push --tags
+```
+
 ## Sources
 
 JSON data for spelling differences adapted from [American-British-English-Translator][translator].
