@@ -53,3 +53,8 @@ Then configure the rules you want to use under the rules section.
 - https://medium.com/@btegelund/creating-an-eslint-plugin-87f1cb42767f
 - <https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences>
 
+## Attributions
+
+JSON data for spelling differences adapted from [American-British-English-Translator][translator].
+
+[translator]: https://github.com/hyperreality/American-British-English-Translator

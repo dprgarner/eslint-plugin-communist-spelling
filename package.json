@@ -8,7 +8,7 @@
     "eslint-plugin"
   ],
   "author": "David Garner",
-  "repo": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/dprgarner/eslint-plugin-no-communist-spelling.git"
   },
