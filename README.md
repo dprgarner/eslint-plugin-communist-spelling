@@ -67,3 +67,10 @@ git push && git push --tags
 JSON data for spelling differences adapted from [American-British-English-Translator][translator].
 
 [translator]: https://github.com/hyperreality/American-British-English-Translator
+
+## TODO
+
+- [ ] Fix ES6 syntax (classes, destructuring variables, etc.)
+- [ ] Add React support
+- [ ] Disable this for CommonJS imports
+- [ ] Add an option for the Communist American-to-British inverse mode

@@ -27,9 +27,7 @@ console.log(colour);  // The variable is not set here
 
 ### Options
 
-TODO:
-- Add an option for the communist inverse mode
-- Add an option to disable this for imports
+TODO.
 
 ## When Not To Use It
 
