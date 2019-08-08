@@ -2,6 +2,10 @@
 
 An ESLint plugin containing a single rule to catch variable names written in British English instead of American English.
 
+## Rules
+
+- [no-communist-spelling/no-communist-spelling](./docs/rules/no-communist-spelling.md)
+
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):
@@ -41,10 +45,13 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-## Supported Rules
+## Sources
 
-* [no-communist-spelling/no-communist-spelling](./docs/rules/no-communist-spelling.md)
+JSON data for spelling differences adapted from [American-British-English-Translator][translator].
 
+[translator]: https://github.com/hyperreality/American-British-English-Translator
+
+Other links:
 
 ## Link Dump
 
@@ -52,9 +59,3 @@ Then configure the rules you want to use under the rules section.
 - https://eslint.org/docs/rules/#variables
 - https://medium.com/@btegelund/creating-an-eslint-plugin-87f1cb42767f
 - <https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences>
-
-## Attributions
-
-JSON data for spelling differences adapted from [American-British-English-Translator][translator].
-
-[translator]: https://github.com/hyperreality/American-British-English-Translator
