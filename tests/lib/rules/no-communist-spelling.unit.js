@@ -64,8 +64,15 @@ describe('findBritishSpellings', () => {
     });
 
     it('returns matches for communist spellings', () => {
-        expect(findBritishSpellings('favouriteTea')).to.deep.equal(['favorite']);
-        expect(findBritishSpellings('yoghurt_crumpet')).to.deep.equal(['yogurt']);
-        expect(findBritishSpellings('BAD_BEHAVIOUR')).to.deep.equal(['behavior']);
+        expect(findBritishSpellings('favouriteTea')).to.deep.equal([['favourite', 'favorite']]);
+        expect(findBritishSpellings('yoghurt_crumpet')).to.deep.equal([['yoghurt', 'yogurt']]);
+        expect(findBritishSpellings('BAD_BEHAVIOUR')).to.deep.equal([['behaviour', 'behavior']]);
+    });
+
+    it('returns multiple matches for communist spellings', () => {
+        expect(findBritishSpellings('favouriteColour')).to.deep.equal([
+            ['favourite', 'favorite'],
+            ['colour', 'color'],
+        ]);
     });
 });

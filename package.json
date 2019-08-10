@@ -22,8 +22,11 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "~3.9.1",
+    "eslint": "4.15",
     "mocha": "^3.1.2"
+  },
+  "peerDependencies": {
+    "eslint": ">=4.15.0"
   },
   "engines": {
     "node": ">=8"
