@@ -137,8 +137,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "colour = \"Red White and Blue\"",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -147,8 +147,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "function addColour(){}",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "addColour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -157,13 +157,13 @@ ruleTester.run("communist-spelling", rule, {
             code: "function favouriteColour(){}",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "favouriteColour", word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 },
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "favouriteColour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 },
             ]
@@ -172,8 +172,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "obj.favourite = function(){};",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -182,8 +182,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "favourite.flag = function(){};",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -192,8 +192,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "[favourite.flag]",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -202,8 +202,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "if (flag.colours === country.favourite) { [honour.veterans] }",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: { name: "honour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -212,8 +212,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "flag.colours = country.favourite",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colours", prefer: "colors" },
+                    messageId: "communistSpelling",
+                    data: { name: "colours",  word: "colours", prefer: "colors" },
                     type: "Identifier"
                 }
             ]
@@ -222,8 +222,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "var murcah = { colour: gun.favourite }",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -233,8 +233,8 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ ignoreDestructuring: true }],
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -243,8 +243,8 @@ ruleTester.run("communist-spelling", rule, {
             code: "serve.with.honour = { color: gun.favourite }",
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: { name: "honour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -254,8 +254,8 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ properties: "always" }],
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -265,8 +265,8 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ properties: "always" }],
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -276,8 +276,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -288,8 +288,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -300,8 +300,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -311,8 +311,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -323,8 +323,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 2018 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favoured", prefer: "favored" },
+                    messageId: "communistSpelling",
+                    data: {name: "favouredProps", word: "favoured", prefer: "favored" },
                     type: "Identifier"
                 }
             ]
@@ -334,8 +334,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -345,8 +345,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -356,8 +356,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -367,8 +367,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: {name: "addFavourite",  word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -378,8 +378,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourites", prefer: "favorites" },
+                    messageId: "communistSpelling",
+                    data: { name: "favourites", word: "favourites", prefer: "favorites" },
                     type: "Identifier"
                 }
             ]
@@ -389,19 +389,19 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "addFavourite", word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
         },
         {
-            code: "import { myFavourite as myColour } from \"external-module\";",
+            code: "import { theFavourite as myFavourite } from \"external-module\";",
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "myFavourite",  word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -411,8 +411,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: {name: "favourite",   word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -422,8 +422,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -433,8 +433,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -444,8 +444,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favour", prefer: "favor" },
+                    messageId: "communistSpelling",
+                    data: { name: "favour",  word: "favour", prefer: "favor" },
                     type: "Identifier"
                 }
             ]
@@ -455,8 +455,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "addFavourite",  word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -466,8 +466,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -477,8 +477,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
@@ -488,13 +488,13 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "colour",  word: "colour", prefer: "color" },
                     type: "Identifier"
                 },
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "favourite", prefer: "favorite" },
+                    messageId: "communistSpelling",
+                    data: { name: "favourite",  word: "favourite", prefer: "favorite" },
                     type: "Identifier"
                 }
             ]
@@ -504,8 +504,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: {  name: "colour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 },
             ]
@@ -515,8 +515,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: {name: "honour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 },
             ]
@@ -526,8 +526,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honourable", prefer: "honorable" },
+                    messageId: "communistSpelling",
+                    data: {name: "isHonourable", word: "honourable", prefer: "honorable" },
                     type: "Identifier"
                 }
             ]
@@ -537,8 +537,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honourable", prefer: "honorable" },
+                    messageId: "communistSpelling",
+                    data: { name: "honourable",word: "honourable", prefer: "honorable" },
                     type: "Identifier"
                 }
             ]
@@ -548,8 +548,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: { name: "honour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -559,8 +559,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: {name: "honour",  word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -570,8 +570,8 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ allow: ["colour"] }],
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: { name: "withHonour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -581,8 +581,8 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ allow: ["ise$"] }],
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "honour", prefer: "honor" },
+                    messageId: "communistSpelling",
+                    data: { name: "withHonour", word: "honour", prefer: "honor" },
                     type: "Identifier"
                 }
             ]
@@ -593,8 +593,8 @@ ruleTester.run("communist-spelling", rule, {
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
-                    messageId: "noCommunistSpelling",
-                    data: { word: "colour", prefer: "color" },
+                    messageId: "communistSpelling",
+                    data: { name: "addColour", word: "colour", prefer: "color" },
                     type: "Identifier"
                 }
             ]
