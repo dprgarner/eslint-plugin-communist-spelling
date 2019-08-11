@@ -5,6 +5,11 @@
 
 An ESLint plugin containing a single rule to catch variable names written in British English instead of American English.
 
+```js
+function favouriteCountry({ colours = ['communist', 'red'] }) {} // 👎😠☭
+function favoriteCountry({ colors = ['red', 'white', 'blue'] }) {} // 👍🇺🇸🦅
+```
+
 ## Rules
 
 Documentation for the rule is located here:

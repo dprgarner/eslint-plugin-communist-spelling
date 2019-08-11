@@ -138,7 +138,11 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colours", word: "colours", prefer: "colors" },
+                    data: {
+                        name: "colours",
+                        word: "colours",
+                        prefer: "colors",
+                    },
                     type: "Identifier",
                 },
             ],
@@ -347,7 +351,8 @@ ruleTester.run("communist-spelling", rule, {
             ],
         },
         {
-            code: "var { favouriteColour: favoriteColor, ...otherColours } = query;",
+            code:
+                "var { favouriteColour: favoriteColor, ...otherColours } = query;",
             options: [{ ignoreDestructuring: true }],
             parserOptions: { ecmaVersion: 2018 },
             errors: [
@@ -527,24 +532,34 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colours", word: "colours", prefer: "colors" },
+                    data: {
+                        name: "colours",
+                        word: "colours",
+                        prefer: "colors",
+                    },
                     type: "Identifier",
                 },
             ],
         },
         {
-            code: "function freedom({ colours = ['red', 'white', 'blue'] }) {};",
+            code:
+                "function freedom({ colours = ['red', 'white', 'blue'] }) {};",
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colours", word: "colours", prefer: "colors" },
+                    data: {
+                        name: "colours",
+                        word: "colours",
+                        prefer: "colors",
+                    },
                     type: "Identifier",
                 },
             ],
         },
         {
-            code: "const colour = 0; function freedom({ favourite = honour }) {}",
+            code:
+                "const colour = 0; function freedom({ favourite = honour }) {}",
             parserOptions: { ecmaVersion: 6 },
             errors: [
                 {
