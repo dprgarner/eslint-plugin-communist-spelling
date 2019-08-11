@@ -22,8 +22,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive",
-    "lint": "prettier --check \"{lib,tests}/**/*.js\"",
-    "format": "prettier --write \"{lib,tests}/**/*.js\""
+    "lint": "prettier --check \"{lib,scripts,tests}/**/*.js\"",
+    "format": "prettier --write \"{lib,scripts,tests}/**/*.js\""
   },
   "dependencies": {
     "requireindex": "~1.1.0"

@@ -71,4 +71,3 @@ The JSON data for spelling differences was adapted from the [American-British-En
 ## TODO
 
 - Inverse mode option (no capitalist spellings)
-- `disallow` option (for made-up words)
