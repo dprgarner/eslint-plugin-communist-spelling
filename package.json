@@ -5,7 +5,13 @@
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "american",
+    "british",
+    "english",
+    "spelling",
+    "us",
+    "uk"
   ],
   "author": "David Garner",
   "repository": {
