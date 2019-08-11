@@ -4,7 +4,12 @@ node_js:
 jobs:
   include:
   - stage: test
+    name: Unit Tests
     script: yarn test
+  - stage: test
+    name: Linting
+    script: yarn lint
+
   - stage: deploy
     script: skip
     before_deploy: yarn build
@@ -14,6 +19,6 @@ jobs:
       skip_cleanup: true
       on:
         tags: true
-        repo: dprgarner/eslint-plugin-no-communist-spelling
+        repo: dprgarner/eslint-plugin-communist-spelling
       api_key:
         secure: g+o1QLEYI2RKlcEWf507xs1agwTHNOegq14knHzV0oBNh0I1Cxl5IEWoXrbiepIEZKs3PFHfTj+m6GvVcmGAiW62uNHbIoQsOrJOTe57gZy0l0khnvwS3NA8zyBT0AzfPELd4NSf/JleujhH5IL8+AsffVK+9Lmwhb9zC5a12wSjpY50FIjylACSkZsv6HBo36kh7kBJAI5LbXx8Pmnrviq5761lodvTXKmMDNs++vn15P9htiOiFRuTJm1iM7PuTGL4f7Qlj7zr7+dNUdoEzdJEXJ5WVmpvENREI3XILTGJJoSegO/hB80Q6rvAtZDxd8gBUb37xdYrxi4YHDDBUZj9lrBxWKmwoJ93HYv5B0xzXMW8E1Xn+cq7dw73Y2LtrU1j2o7Rb3DcWZX8jPi9OilL6pKvrjjTBQUgLdLoZ/aCbQCjjhKRZhKGmigAuF52NbM2gss4MxCl18EHaXaE0RFa1ko6cISwKNV9V/67MNP4xeI66KjUYb/1xNKARdqLNIUXyFDXNnM+UcavpEcuPO1QwgYqoGPDxLiteKFVDUAfIgamHdKbI4i5WFziQDg5m5tYj0a35ay0FTJQq+s88DFD7pOJFrPg/95Q7eceTeys9iOP9viy2o58ZEzXgoocNQiRpooktBSogz9ZN+dtjiW4cX37PapuS2D8Da6bMZ4=
