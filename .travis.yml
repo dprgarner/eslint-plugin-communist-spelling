@@ -12,7 +12,6 @@ jobs:
 
   - stage: deploy
     script: skip
-    before_deploy: yarn build
     deploy:
       provider: npm
       email: dprgarner@gmail.com
