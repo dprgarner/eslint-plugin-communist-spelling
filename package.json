@@ -17,7 +17,7 @@
   "scripts": {
     "test": "mocha tests --recursive",
     "lint": "prettier --check \"{lib,tests}/**/*.js\"",
-    "format": "yarn lint --write"
+    "format": "prettier --write \"{lib,tests}/**/*.js\""
   },
   "dependencies": {
     "requireindex": "~1.1.0"

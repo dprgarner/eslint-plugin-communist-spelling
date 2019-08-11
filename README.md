@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/dprgarner/eslint-plugin-communist-spelling.svg?branch=master)](https://travis-ci.org/dprgarner/eslint-plugin-communist-spelling)
+[![npm](https://img.shields.io/npm/v/eslint-plugin-communist-spelling)](http://npmjs.com/package/eslint-plugin-communist-spelling)
+
 # eslint-plugin-communist-spelling
 
 An ESLint plugin containing a single rule to catch variable names written in British English instead of American English.
@@ -70,7 +73,5 @@ JSON data for spelling differences adapted from [American-British-English-Transl
 
 ## TODO
 
-- [ ] Fix ES6 syntax (classes, destructuring variables, etc.)
-- [ ] Add React support
-- [ ] Disable this for CommonJS imports
+- [ ] Update Docs
 - [ ] Add an option for the Communist American-to-British inverse mode
