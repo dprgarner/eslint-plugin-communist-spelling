@@ -29,23 +29,15 @@ $ npm install eslint-plugin-communist-spelling --save-dev
 
 ## Usage
 
-Add `communist-spelling` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `communist-spelling` to the plugins section of your `.eslintrc` configuration file, and `communist-spelling/communist-spelling` to the list of rules. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
         "communist-spelling"
-    ]
-}
-```
-
-
-Then configure the rules you want to use under the rules section.
-
-```json
-{
+    ],
     "rules": {
-        "communist-spelling/communist-spelling": 2
+        "communist-spelling/communist-spelling": "error"
     }
 }
 ```
@@ -67,11 +59,11 @@ git push && git push --tags
 
 ## Sources
 
-JSON data for spelling differences adapted from [American-British-English-Translator][translator].
+The JSON data for spelling differences was adapted from the [American-British-English-Translator][translator].
 
 [translator]: https://github.com/hyperreality/American-British-English-Translator
 
 ## TODO
 
-- [ ] Update Docs
-- [ ] Add an option for the Communist American-to-British inverse mode
+- Inverse mode option (no capitalist spellings)
+- `disallow` option (for made-up words)
