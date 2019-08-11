@@ -7,7 +7,7 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
-const rule = require("../../../lib/rules/no-communist-spelling"),
+const rule = require("../../../lib/rules/communist-spelling"),
     RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ const rule = require("../../../lib/rules/no-communist-spelling"),
 //------------------------------------------------------------------------------
 const ruleTester = new RuleTester();
 
-ruleTester.run("no-communist-spelling", rule, {
+ruleTester.run("communist-spelling", rule, {
     valid: [
         "color = \"Freedom\"",
         "COLOR = \"Murcah\"",

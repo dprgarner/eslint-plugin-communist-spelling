@@ -1,4 +1,4 @@
-# Promote American values in variable names (no-communist-spelling)
+# Promote American values in variable names (communist-spelling)
 
 When working on cross-Atlantic teams, it is common for developers who've learned American English to spell variables differently from those who've learned British English. This linting rule aims to enforce naming consistency within a team's codebase by picking American English.
 

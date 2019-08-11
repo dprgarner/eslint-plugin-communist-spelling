@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-no-communist-spelling",
+  "name": "eslint-plugin-communist-spelling",
   "version": "0.0.0",
   "description": "Promote American values in variable names",
   "keywords": [
@@ -10,9 +10,9 @@
   "author": "David Garner",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dprgarner/eslint-plugin-no-communist-spelling.git"
+    "url": "https://github.com/dprgarner/eslint-plugin-communist-spelling.git"
   },
-  "homepage": "https://github.com/dprgarner/eslint-plugin-no-communist-spelling#readme",
+  "homepage": "https://github.com/dprgarner/eslint-plugin-communist-spelling#readme",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"

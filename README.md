@@ -1,4 +1,4 @@
-# eslint-plugin-no-communist-spelling
+# eslint-plugin-communist-spelling
 
 An ESLint plugin containing a single rule to catch variable names written in British English instead of American English.
 
@@ -6,7 +6,7 @@ An ESLint plugin containing a single rule to catch variable names written in Bri
 
 Documentation for the rule is located here:
 
-- [no-communist-spelling/no-communist-spelling](https://github.com/dprgarner/eslint-plugin-no-communist-spelling/tree/master/docs/rules/no-communist-spelling.md)
+- [communist-spelling/communist-spelling](https://github.com/dprgarner/eslint-plugin-communist-spelling/tree/master/docs/rules/communist-spelling.md)
 
 ## Installation
 
@@ -16,22 +16,22 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-no-communist-spelling`:
+Next, install `eslint-plugin-communist-spelling`:
 
 ```
-$ npm install eslint-plugin-no-communist-spelling --save-dev
+$ npm install eslint-plugin-communist-spelling --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-no-communist-spelling` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-communist-spelling` globally.
 
 ## Usage
 
-Add `no-communist-spelling` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `communist-spelling` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "no-communist-spelling"
+        "communist-spelling"
     ]
 }
 ```
@@ -42,7 +42,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "no-communist-spelling/no-communist-spelling": 2
+        "communist-spelling/communist-spelling": 2
     }
 }
 ```
