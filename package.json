@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-communist-spelling",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Promote American values in variable names",
   "keywords": [
     "eslint",
