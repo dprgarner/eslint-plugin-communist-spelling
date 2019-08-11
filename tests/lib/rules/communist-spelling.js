@@ -17,8 +17,8 @@ const ruleTester = new RuleTester();
 
 ruleTester.run("communist-spelling", rule, {
     valid: [
-        "color = \"Freedom\"",
-        "COLOR = \"Murcah\"",
+        'color = "Freedom"',
+        'COLOR = "Murcah"',
         "function addFavoriteCountry(){}",
         "favourite()",
         "new favourite",
@@ -36,187 +36,216 @@ ruleTester.run("communist-spelling", rule, {
         "if (foo.colour === boom.colour) { [foo.colour] }",
         {
             code: "var o = {favorite: 1}",
-            options: [{ properties: "always" }]
+            options: [{ properties: "always" }],
         },
         {
             code: "var o = {favourite: 1}",
-            options: [{ properties: "never" }]
+            options: [{ properties: "never" }],
         },
         {
             code: "obj.favorite = 2;",
-            options: [{ properties: "always" }]
+            options: [{ properties: "always" }],
         },
         {
             code: "obj.favourite = 2;",
-            options: [{ properties: "never" }]
+            options: [{ properties: "never" }],
         },
         {
             code: "var obj = {\n colour: 1 \n};\n obj.colour = 2;",
-            options: [{ properties: "never" }]
+            options: [{ properties: "never" }],
         },
         {
             code: "obj.colour = function(){};",
-            options: [{ properties: "never" }]
+            options: [{ properties: "never" }],
         },
         {
             code: "var { colour } = query;",
             options: [{ ignoreDestructuring: true }],
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var { colour: colour } = query;",
             options: [{ ignoreDestructuring: true }],
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var { colour = 1 } = query;",
             options: [{ ignoreDestructuring: true }],
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var { [{colour} = query]: color } = query;",
             options: [{ ignoreDestructuring: true }],
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "var { colour: category } = query;",
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
-            code: "import { color } from \"external-module\";",
-            parserOptions: { ecmaVersion: 6, sourceType: "module" }
+            code: 'import { color } from "external-module";',
+            parserOptions: { ecmaVersion: 6, sourceType: "module" },
         },
         {
-            code: "import { colour as color } from \"external-module\";",
-            parserOptions: { ecmaVersion: 6, sourceType: "module" }
+            code: 'import { colour as color } from "external-module";',
+            parserOptions: { ecmaVersion: 6, sourceType: "module" },
         },
         {
-            code: "import { colour as color, favor } from \"external-module\";",
-            parserOptions: { ecmaVersion: 6, sourceType: "module" }
+            code: 'import { colour as color, favor } from "external-module";',
+            parserOptions: { ecmaVersion: 6, sourceType: "module" },
         },
         {
             code: "function foo({ colour: color }) {};",
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "function foo({ color = 'default value' }) {};",
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "function foo({ camelCased }) {};",
-            parserOptions: { ecmaVersion: 6 }
+            parserOptions: { ecmaVersion: 6 },
         },
         {
             code: "favourite = 0;",
-            options: [{ allow: ["favourite"] }]
+            options: [{ allow: ["favourite"] }],
         },
         {
             code: "addFavourite = 0;",
-            options: [{ allow: ["favourite"] }]
+            options: [{ allow: ["favourite"] }],
         },
         {
             code: "favourite = 0; colour = 1;",
-            options: [{ allow: ["favourite", "colour"] }]
+            options: [{ allow: ["favourite", "colour"] }],
         },
         {
             code: "digitise = 0;",
-            options: [{ allow: ["ise$"] }]
+            options: [{ allow: ["ise$"] }],
         },
         {
             code: "digitiseColours = 0;",
-            options: [{ allow: ["ise$", "colours"] }]
+            options: [{ allow: ["ise$", "colours"] }],
         },
         {
             code: "foo = { [favor]: 0 };",
             options: [{ ignoreDestructuring: true }],
-            parserOptions: { ecmaVersion: 6 }
-        }
+            parserOptions: { ecmaVersion: 6 },
+        },
     ],
     invalid: [
         {
-            code: "colour = \"Red White and Blue\"",
+            code: 'colour = "Red White and Blue"',
             errors: [
                 {
                     messageId: "communistSpelling",
                     data: { name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "function addColour(){}",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "addColour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "addColour",
+                        word: "colour",
+                        prefer: "color",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "function favouriteColour(){}",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favouriteColour", word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
+                    data: {
+                        name: "favouriteColour",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
                 },
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favouriteColour", word: "colour", prefer: "color" },
-                    type: "Identifier"
+                    data: {
+                        name: "favouriteColour",
+                        word: "colour",
+                        prefer: "color",
+                    },
+                    type: "Identifier",
                 },
-            ]
+            ],
         },
         {
             code: "obj.favourite = function(){};",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "favourite.flag = function(){};",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "[favourite.flag]",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favourite", word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "if (flag.colours === country.favourite) { [honour.veterans] }",
+            code:
+                "if (flag.colours === country.favourite) { [honour.veterans] }",
             errors: [
                 {
                     messageId: "communistSpelling",
                     data: { name: "honour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "flag.colours = country.favourite",
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colours",  word: "colours", prefer: "colors" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "colours",
+                        word: "colours",
+                        prefer: "colors",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var murcah = { colour: gun.favourite }",
@@ -224,9 +253,9 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var murcah = { colour: gun.favourite }",
@@ -235,9 +264,9 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "serve.with.honour = { color: gun.favourite }",
@@ -245,9 +274,9 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "honour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var o = {colour: 1}",
@@ -256,9 +285,9 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "obj.colour = 2;",
@@ -266,10 +295,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { honour: colour } = query;",
@@ -277,10 +306,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { honour: colour } = query;",
@@ -289,10 +318,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { [colour]: color } = query;",
@@ -301,10 +330,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { [colour]: color } = query;",
@@ -312,10 +341,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { colour: color, ...favouredProps } = query;",
@@ -324,10 +353,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "favouredProps", word: "favoured", prefer: "favored" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favouredProps",
+                        word: "favoured",
+                        prefer: "favored",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { colour } = query;",
@@ -335,10 +368,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { colour: colour } = query;",
@@ -346,10 +379,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { colour = 1 } = query;",
@@ -358,108 +391,135 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import addFavourite from \"external-module\";",
+            code: 'import addFavourite from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "addFavourite",  word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "addFavourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import * as favourites from \"external-module\";",
+            code: 'import * as favourites from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favourites", word: "favourites", prefer: "favorites" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourites",
+                        word: "favourites",
+                        prefer: "favorites",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import { addFavourite } from \"external-module\";",
+            code: 'import { addFavourite } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "addFavourite", word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "addFavourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import { theFavourite as myFavourite } from \"external-module\";",
+            code:
+                'import { theFavourite as myFavourite } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "myFavourite",  word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "myFavourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import { favorite as favourite } from \"external-module\";",
+            code: 'import { favorite as favourite } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "favourite",   word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import { favorite, colour } from \"external-module\";",
+            code: 'import { favorite, colour } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import { favourite as favorite, colour } from \"external-module\";",
+            code:
+                'import { favourite as favorite, colour } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import honor, { favour } from \"external-module\";",
+            code: 'import honor, { favour } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favour",  word: "favour", prefer: "favor" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "favour", word: "favour", prefer: "favor" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
-            code: "import addFavourite, { anotherFavourite as anotherFavorite } from \"external-module\";",
+            code:
+                'import addFavourite, { anotherFavourite as anotherFavorite } from "external-module";',
             parserOptions: { ecmaVersion: 6, sourceType: "module" },
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "addFavourite",  word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "addFavourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "function foo({ colour }) {};",
@@ -467,10 +527,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "function foo({ colour = 'default value' }) {};",
@@ -478,10 +538,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "const colour = 0; function foo({ favourite = honour}) {}",
@@ -489,15 +549,19 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "colour",  word: "colour", prefer: "color" },
-                    type: "Identifier"
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
                 },
                 {
                     messageId: "communistSpelling",
-                    data: { name: "favourite",  word: "favourite", prefer: "favorite" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "favourite",
+                        word: "favourite",
+                        prefer: "favorite",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "const { bar: colour } = foo;",
@@ -505,10 +569,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {  name: "colour", word: "colour", prefer: "color" },
-                    type: "Identifier"
+                    data: { name: "colour", word: "colour", prefer: "color" },
+                    type: "Identifier",
                 },
-            ]
+            ],
         },
         {
             code: "function foo({ colour: honour }) {}",
@@ -516,10 +580,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "honour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
+                    data: { name: "honour", word: "honour", prefer: "honor" },
+                    type: "Identifier",
                 },
-            ]
+            ],
         },
         {
             code: "function foo({ isHonorable: isHonourable }) {};",
@@ -527,10 +591,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "isHonourable", word: "honourable", prefer: "honorable" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "isHonourable",
+                        word: "honourable",
+                        prefer: "honorable",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "var { foo: honourable = 1 } = quz;",
@@ -538,10 +606,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "honourable",word: "honourable", prefer: "honorable" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "honourable",
+                        word: "honourable",
+                        prefer: "honorable",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "const { honour = false } = bar;",
@@ -550,9 +622,9 @@ ruleTester.run("communist-spelling", rule, {
                 {
                     messageId: "communistSpelling",
                     data: { name: "honour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "const { honour = colour } = bar;",
@@ -560,10 +632,10 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: {name: "honour",  word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    data: { name: "honour", word: "honour", prefer: "honor" },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "withHonour = 0;",
@@ -571,10 +643,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "withHonour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "withHonour",
+                        word: "honour",
+                        prefer: "honor",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "withHonour = 0;",
@@ -582,10 +658,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "withHonour", word: "honour", prefer: "honor" },
-                    type: "Identifier"
-                }
-            ]
+                    data: {
+                        name: "withHonour",
+                        word: "honour",
+                        prefer: "honor",
+                    },
+                    type: "Identifier",
+                },
+            ],
         },
         {
             code: "foo = { [addColour]: 0 };",
@@ -594,10 +674,14 @@ ruleTester.run("communist-spelling", rule, {
             errors: [
                 {
                     messageId: "communistSpelling",
-                    data: { name: "addColour", word: "colour", prefer: "color" },
-                    type: "Identifier"
-                }
-            ]
-        }
-    ]
+                    data: {
+                        name: "addColour",
+                        word: "colour",
+                        prefer: "color",
+                    },
+                    type: "Identifier",
+                },
+            ],
+        },
+    ],
 });
