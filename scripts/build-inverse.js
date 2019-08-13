@@ -26,10 +26,12 @@ function isOxford(word) {
 
 Object.keys(britishSpellings).forEach(ukWord => {
     const usWord = britishSpellings[ukWord];
+
+    oxfordSpellings[usWord] = ukWord;
     if (isOxford(usWord)) {
-        oxfordSpellings[usWord] = ukWord;
         notOxfordSpellings[ukWord] = usWord;
     } else {
+        notOxfordSpellings[usWord] = ukWord;
         americanSpellings[usWord] = ukWord;
     }
 });

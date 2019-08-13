@@ -135,6 +135,30 @@ ruleTester.run("communist-spelling", rule, {
             code: "class X { constructor() {} }",
             parserOptions: { ecmaVersion: 6 },
         },
+        {
+            code: "favorite = 0;",
+            options: [{ communist: "never" }],
+        },
+        {
+            code: "favourite = 0;",
+            options: [{ communist: "always" }],
+        },
+        {
+            code: "civilisedColonizing = false",
+            options: [{ communist: "always" }],
+        },
+        {
+            code: "civilisedColonizing = false",
+            options: [{ communist: "always", oxford: "any" }],
+        },
+        {
+            code: "civilisedColonising = false",
+            options: [{ communist: "always", oxford: "never" }],
+        },
+        {
+            code: "civilizedColonizing = false",
+            options: [{ communist: "always", oxford: "always" }],
+        },
     ],
     invalid: [
         {
@@ -713,6 +737,66 @@ ruleTester.run("communist-spelling", rule, {
                         name: "myFavourites",
                         word: "favourites",
                         prefer: "favorites",
+                    },
+                    type: "Identifier",
+                },
+            ],
+        },
+        {
+            code: "favoriteColour = 0;",
+            options: [{ communist: "always" }],
+            errors: [
+                {
+                    messageId: "capitalistSpelling",
+                    data: {
+                        name: "favoriteColour",
+                        word: "favorite",
+                        prefer: "favourite",
+                    },
+                    type: "Identifier",
+                },
+            ],
+        },
+        {
+            code: "favoriteColour = 0;",
+            options: [{ communist: "always", oxford: "any" }],
+            errors: [
+                {
+                    messageId: "capitalistSpelling",
+                    data: {
+                        name: "favoriteColour",
+                        word: "favorite",
+                        prefer: "favourite",
+                    },
+                    type: "Identifier",
+                },
+            ],
+        },
+        {
+            code: "civilisedColonizing = false",
+            options: [{ communist: "always", oxford: "always" }],
+            errors: [
+                {
+                    messageId: "capitalistSpelling",
+                    data: {
+                        name: "civilisedColonizing",
+                        word: "civilised",
+                        prefer: "civilized",
+                    },
+                    type: "Identifier",
+                },
+            ],
+        },
+        {
+            code: "civilisedColonizing = false",
+            options: [{ communist: "always", oxford: "never" }],
+            errors: [
+                {
+                    messageId: "capitalistSpelling",
+                    data: {
+                        name: "civilisedColonizing",
+                        word: "colonizing",
+                        prefer: "colonising",
                     },
                     type: "Identifier",
                 },

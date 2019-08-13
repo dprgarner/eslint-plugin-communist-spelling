@@ -1,5 +1,11 @@
 const { expect } = require("chai");
-const { findBritishSpellings, splitWords } = require("../../../lib/utils");
+const {
+    findBritishSpellings,
+    findAmericanSpellings,
+    findAmericanAndOxfordSpellings,
+    findAmericanAndNotOxfordSpellings,
+    splitWords,
+} = require("../../lib/utils");
 
 describe("splitWords", () => {
     it("ignores a single lower-case word", () => {
@@ -88,5 +94,64 @@ describe("findBritishSpellings", () => {
             ["favourite", "favorite"],
             ["colour", "color"],
         ]);
+    });
+});
+
+describe("findAmericanSpellings", () => {
+    it("returns no matches for communist spellings", () => {
+        expect(findAmericanSpellings("colourfulFlavours")).to.deep.equal([]);
+    });
+
+    it("returns matches for capitalist spellings", () => {
+        expect(findAmericanSpellings("colorfulFlavors")).to.deep.equal([
+            ["colorful", "colourful"],
+            ["flavors", "flavours"],
+        ]);
+    });
+
+    it("returns no matches for -ise and -ize endings", () => {
+        expect(findAmericanSpellings("dramatiseColonization")).to.deep.equal(
+            []
+        );
+    });
+});
+
+describe("findAmericanAndOxfordSpellings", () => {
+    it("returns no matches for communist spellings", () => {
+        expect(
+            findAmericanAndOxfordSpellings("colourfulFlavours")
+        ).to.deep.equal([]);
+    });
+
+    it("returns matches for capitalist spellings", () => {
+        expect(findAmericanAndOxfordSpellings("colorfulFlavors")).to.deep.equal(
+            [["colorful", "colourful"], ["flavors", "flavours"]]
+        );
+    });
+
+    it("returns matches for -ize endings only", () => {
+        expect(
+            findAmericanAndOxfordSpellings("dramatiseColonization")
+        ).to.deep.equal([["colonization", "colonisation"]]);
+    });
+});
+
+describe("findAmericanAndNotOxfordSpellings", () => {
+    it("returns no matches for communist spellings", () => {
+        expect(
+            findAmericanAndNotOxfordSpellings("colourfulFlavours")
+        ).to.deep.equal([]);
+    });
+
+    it("returns matches for capitalist spellings", () => {
+        expect(
+            findAmericanAndNotOxfordSpellings("colorfulFlavors")
+        ).to.deep.equal([["colorful", "colourful"], ["flavors", "flavours"]]);
+    });
+
+    it("returns matches for -ize endings only", () => {
+        expect(
+            findAmericanAndNotOxfordSpellings("dramatiseColonization")
+        ).to.deep.equal([["dramatise", "dramatize"]]);
     });
 });
