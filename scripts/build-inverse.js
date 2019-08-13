@@ -6,7 +6,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const dataDir = path.join(__dirname, "..", "data");
+const buildDir = path.join(__dirname, "..", "build");
 
 const britishSpellings = require("../data/british-spellings.json");
 
@@ -34,15 +34,14 @@ Object.keys(britishSpellings).forEach(ukWord => {
     }
 });
 
-fs.writeFileSync(
-    path.join(dataDir, "american-spellings.json"),
-    JSON.stringify(americanSpellings, null, 2)
-);
-fs.writeFileSync(
-    path.join(dataDir, "oxford-spellings.json"),
-    JSON.stringify(oxfordSpellings, null, 2)
-);
-fs.writeFileSync(
-    path.join(dataDir, "not-oxford-spellings.json"),
-    JSON.stringify(notOxfordSpellings, null, 2)
-);
+Object.entries({
+    "british-spellings": britishSpellings,
+    "american-spellings": americanSpellings,
+    "oxford-spellings": oxfordSpellings,
+    "not-oxford-spellings": notOxfordSpellings,
+}).forEach(([filename, spellings]) => {
+    fs.writeFileSync(
+        path.join(buildDir, `${filename}.json`),
+        JSON.stringify(spellings)
+    );
+});

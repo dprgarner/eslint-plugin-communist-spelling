@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dprgarner/eslint-plugin-communist-spelling#readme",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "./scripts/build-inverse.js",
     "test": "mocha tests --recursive",
     "lint": "prettier --check \"{lib,scripts,tests}/**/*.js\"",
     "format": "prettier --write \"{lib,scripts,tests}/**/*.js\""
