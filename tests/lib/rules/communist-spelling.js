@@ -131,6 +131,10 @@ ruleTester.run("communist-spelling", rule, {
             options: [{ ignoreDestructuring: true }],
             parserOptions: { ecmaVersion: 6 },
         },
+        {
+            code: "class X { constructor() {} }",
+            parserOptions: { ecmaVersion: 6 },
+        },
     ],
     invalid: [
         {
