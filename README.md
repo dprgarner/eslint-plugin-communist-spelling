@@ -3,34 +3,32 @@
 
 # eslint-plugin-communist-spelling
 
-An ESLint plugin containing a single rule to catch variable names written in British English instead of American English.
+An ESLint plugin containing a single rule to catch variable names written in ~~Communist~~ Commonwealth English instead of American English. Keep them Reds out of decent American codebases.
 
 ```js
-function favouriteCountry({ colours = ['communist', 'red'] }) {} // 👎😠☭
-function favoriteCountry({ colors = ['red', 'white', 'blue'] }) {} // 👍🇺🇸🦅
+function favouriteCountry({ colours = ["communist", "red"] }) {} // 👎😠☭
+function favoriteCountry({ colors = ["red", "white", "blue"] }) {} // 👍🇺🇸🦅
 ```
 
-## Rules
+...or, if you're a Godless ~~Communist~~ Commonwealther, the rule can be inverted to enforce Commonwealth spellings in your variable names.
 
-Documentation for the rule is located here:
+In-depth documentation for the rule, the available options, and more examples of code are located here:
 
-- [communist-spelling/communist-spelling](https://github.com/dprgarner/eslint-plugin-communist-spelling/tree/master/docs/rules/communist-spelling.md)
+-   [communist-spelling/communist-spelling](https://github.com/dprgarner/eslint-plugin-communist-spelling/tree/master/docs/rules/communist-spelling.md)
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+If using yarn:
 
-```
-$ npm i eslint --save-dev
-```
-
-Next, install `eslint-plugin-communist-spelling`:
-
-```
-$ npm install eslint-plugin-communist-spelling --save-dev
+```bash
+yarn add -D eslint-plugin-communist-spelling
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-communist-spelling` globally.
+If using npm:
+
+```bash
+npm install --save-dev eslint-plugin-communist-spelling
+```
 
 ## Usage
 
@@ -38,13 +36,21 @@ Add `communist-spelling` to the plugins section of your `.eslintrc` configuratio
 
 ```json
 {
-    "plugins": [
-        "communist-spelling"
-    ],
+    "plugins": ["communist-spelling"],
     "rules": {
         "communist-spelling/communist-spelling": "error"
     }
 }
+```
+
+or, if using a YAML ESLint config file:
+
+```yaml
+plugins:
+    - communist-spelling
+rules:
+    communist-spelling/communist-spelling:
+        - error
 ```
 
 ## Releasing
@@ -62,12 +68,9 @@ and push the new commits and tags with:
 git push && git push --tags
 ```
 
-## Sources
+## Acknowledgements
 
-The JSON data for spelling differences was adapted from the [American-British-English-Translator][translator].
+The JSON data for spelling differences was adapted from the [American-British-English-Translator][translator]. The core functionality of the tree-traversing code was adapted from the [camelCase][camelcase] rule included in the core ESLint package.
 
 [translator]: https://github.com/hyperreality/American-British-English-Translator
-
-## TODO
-
-- Inverse mode option (no capitalist spellings)
+[camelcase]: https://eslint.org/docs/rules/camelcase
