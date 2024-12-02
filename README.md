@@ -55,18 +55,11 @@ rules:
 
 ## Releasing
 
-Releases to NPM are performed via Travis when tagged commits are pushed to the
-repo. Create a new tagged commit and bump the version in package.json with:
+Releases are performed manually. Before releasing:
 
-```bash
-npm version patch
-```
-
-and push the new commits and tags with:
-
-```bash
-git push && git push --tags
-```
+-   Check the tests, linting, and formatting;
+-   Create a new tagged commit with `npm version <major|minor|patch>`, and push to Github;
+-   Publish to npm.
 
 ## Acknowledgements
 
